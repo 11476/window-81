@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Gavin Yu's Website</title>
+    <style>
+        /*
+        :root {
+            --text: black;
+            --body: orange;
+            --d: #FFBE00;
+            --dd: gold;
+            --ddd: #ffe4c4;
+        }
+*/
+        :root {
+            --text: black;
+            --body: #c5e5ef;
+            --d: #add8e6;
+            --dd: skyblue;
+            --ddd: #7ac3db;
+        }
+
+        @counter-style AAA {
+            system: alphabetic;
+            symbols: "A" "a";
+            suffix: ". ";
+        }
+
+        @keyframes spoiler {
+            0% {
+                background-color: black;
+                transform: rotateY(180deg) rotateZ(-360deg);
+            }
+
+            100% {
+                background-color: rgba(0, 0, 0, 0);
+                color: var(--text);
+                transform: rotateY(0deg) rotateZ(0deg);
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 12vh auto auto auto auto;
+            grid-template-areas: "H1 H2 H3" "S1 A B " "S2 C D" "S3 E F" "S4 G H";
+        }
+
+        body {
+            background-color: var(--body);
+        }
+
+        ol {
+            list-style-type: AAA;
+        }
+
+        * {
+            font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
+            color: var(--text);
+        }
+
+        .spoiler {
+            display: block;
+            background-color: black;
+            color: black;
+            transform: none;
+            user-select: none;
+        }
+
+        .spoiler:active {
+            animation-delay: 500ms;
+            animation-name: spoiler;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        span.flc {
+            display: inline-block;
+        }
+
+        .flc::first-letter {
+            display: inline-block;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        hr {
+            border-color: var(--text);
+            border-radius: 0.5cm;
+            border-width: 3px;
+            border-bottom-style: dashed;
+            border-top-style: groove;
+        }
+
+        div {
+            margin: 5px;
+            border-radius: 13px 13px 13px 13px;
+            background-color: var(--d);
+        }
+
+        div div {
+            background-color: var(--dd);
+        }
+
+        div div div {
+            background-color: var(--ddd);
+        }
+
+        /*
+        .a {
+            margin: 5px 5px 5px 5px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 12px;
+            background-color: gold;
+        }
+
+        .b {
+            margin: 6px 6px 6px 6px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-radius: 12px;
+            background-color: #FFBE00;
+        }
+*/
+        .stickyheader {
+            grid-row: 1;
+            grid-column: 1 / 4;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: auto;
+            margin: 5px 5px 5px 5px;
+            justify-self: center;
+            text-align: center;
+        }
+
+        div {
+            padding: 8px;
+        }
+
+        #A {
+            grid-area: S1 / S3 / S3 / S1;
+        }
+
+        #B {
+            grid-area: A / A / H / H;
+        }
+
+        #C {
+            grid-area: S4;
+        }
+
+        td {
+            margin: 2px;
+            background-color: var(--dd);
+        }
+    </style>
+</head>
+
+<body class="grid">
+    <h1 class="stickyheader a"
+        style="text-decoration: limegreen wavy underline; border: 5px inset var(--text); background-color: var(--d);">
+        Gavin Yu's
+        Website </h1>
+    <div class="a" id="A"> &nbsp;&nbsp;&nbsp;<span class="b flc">“QUOTES”</span>
+        <ol>
+            <li class="flc">“The axe forgets, but the tree remembers”.</li>
+            <li class="flc"> “A man who chases two rabbits gets neither.”</li>
+            <li class="flc">“Poland Spring water isn't even from Poland.”</li>
+            <li class="flc">“Numerous clichés have become so well-known that it would be basically impossible to
+                extirpate them from one's vocabulary.”</li>
+            <li class="flc">“WOW LOOK AT MY COOL WEBSITE!!!”</li>
+            <li class="flc">“I'm not a human being. Instead I'm a human bean. No need to thank me.”</li>
+            <li class="flc">“Have you wondered what the purpose of Staten Island is? It's in case you want a New Jersey
+                inside a New York City”</li>
+            <li class="flc">“1+1 is three, not two”</li>
+            <li class="flc">“ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut sint accusantium
+                exercitationem libero explicabo quisquam, modi iure repellendus assumenda autem? Quam reprehenderit
+                aliquam soluta. Ducimus, praesentium vel. Sit, rem explicabo! ”</li>
+        </ol>
+    </div>
+    <div id="B">
+        <h1>Credits to <span class="flc">Miles</span> <span class="flc"> Lee&nbsp;</span>for some website hosting!</h1>
+        <hr> Also
+        click and hold over the black area and don't move your mouse or else you'll get a loop.</p>
+        <h1 class="spoiler flc"> Hi! That was pretty cool, right?</h1>
+        <p class=" flc" style="padding: 8px;"> This is where all my personal projects go. There's not much here, maybe
+            even nothing. <span class="flc">However</span>, I got around seven Amazon™ Gift Cards for my
+            birthday! Yay!</p>
+        <div>
+            <p> By the way, this is definitely not free virus.
+                Why would I ever advertise it like that? Well, with that away, let's ask some math questions!</p>
+        </div> What is
+        the greatest possible valid value of x plus 0.4?
+        <hr> Equation: <div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1" width="64.060657pt" height="26.028499pt" viewBox="-.869365 -.281855 64.060657 26.028499">
+                <defs>
+                    <path id="g1-50"
+                        d="M2.247572-1.625903C2.375093-1.745455 2.709838-2.008468 2.83736-2.12005C3.331507-2.574346 3.801743-3.012702 3.801743-3.737983C3.801743-4.686426 3.004732-5.300125 2.008468-5.300125C1.052055-5.300125 .422416-4.574844 .422416-3.865504C.422416-3.474969 .73325-3.419178 .844832-3.419178C1.012204-3.419178 1.259278-3.53873 1.259278-3.841594C1.259278-4.25604 .860772-4.25604 .765131-4.25604C.996264-4.837858 1.530262-5.037111 1.920797-5.037111C2.662017-5.037111 3.044583-4.407472 3.044583-3.737983C3.044583-2.909091 2.462765-2.303362 1.522291-1.338979L.518057-.302864C.422416-.215193 .422416-.199253 .422416 0H3.57061L3.801743-1.42665H3.55467C3.53076-1.267248 3.466999-.868742 3.371357-.71731C3.323537-.653549 2.717808-.653549 2.590286-.653549H1.171606L2.247572-1.625903Z">
+                    </path>
+                    <path id="g0-120"
+                        d="M3.643635-3.294545C3.70909-3.578181 3.959999-4.581817 4.723635-4.581817C4.77818-4.581817 5.039999-4.581817 5.269089-4.439999C4.963635-4.385453 4.745453-4.112726 4.745453-3.850908C4.745453-3.676363 4.865453-3.46909 5.159999-3.46909C5.399998-3.46909 5.749089-3.665454 5.749089-4.101817C5.749089-4.66909 5.105453-4.821817 4.734544-4.821817C4.101817-4.821817 3.719999-4.243635 3.58909-3.992726C3.316363-4.712726 2.727272-4.821817 2.410908-4.821817C1.276363-4.821817 .654545-3.414545 .654545-3.141817C.654545-3.032726 .763636-3.032726 .785454-3.032726C.872727-3.032726 .905454-3.054545 .927272-3.152726C1.298181-4.30909 2.018181-4.581817 2.38909-4.581817C2.596363-4.581817 2.978181-4.483635 2.978181-3.850908C2.978181-3.512726 2.792726-2.781817 2.38909-1.254545C2.214545-.578182 1.832727-.12 1.352727-.12C1.287272-.12 1.036363-.12 .807273-.261818C1.08-.316364 1.32-.545454 1.32-.850909C1.32-1.145454 1.08-1.232727 .916363-1.232727C.589091-1.232727 .316364-.949091 .316364-.6C.316364-.098182 .861818 .12 1.341818 .12C2.061818 .12 2.454545-.643636 2.487272-.709091C2.618181-.305454 3.010908 .12 3.665454 .12C4.78909 .12 5.410908-1.287272 5.410908-1.56C5.410908-1.66909 5.312726-1.66909 5.279999-1.66909C5.181817-1.66909 5.159999-1.625454 5.13818-1.54909C4.77818-.381818 4.036363-.12 3.687272-.12C3.261817-.12 3.087272-.469091 3.087272-.84C3.087272-1.08 3.152726-1.32 3.272726-1.799999L3.643635-3.294545Z">
+                    </path>
+                    <path id="g2-43"
+                        d="M4.461817-2.50909H7.505452C7.65818-2.50909 7.865452-2.50909 7.865452-2.727272S7.65818-2.945454 7.505452-2.945454H4.461817V-5.999998C4.461817-6.152726 4.461817-6.359998 4.243635-6.359998S4.025453-6.152726 4.025453-5.999998V-2.945454H.970909C.818182-2.945454 .610909-2.945454 .610909-2.727272S.818182-2.50909 .970909-2.50909H4.025453V.545454C4.025453 .698182 4.025453 .905454 4.243635 .905454S4.461817 .698182 4.461817 .545454V-2.50909Z">
+                    </path>
+                    <path id="g2-48"
+                        d="M5.01818-3.490908C5.01818-4.363635 4.963635-5.236362 4.581817-6.043635C4.079999-7.090907 3.185454-7.265453 2.727272-7.265453C2.072727-7.265453 1.276363-6.981816 .829091-5.967271C.48-5.214544 .425454-4.363635 .425454-3.490908C.425454-2.672727 .469091-1.690909 .916363-.861818C1.385454 .021818 2.181818 .24 2.716363 .24C3.305454 .24 4.134544 .010909 4.614544-1.025454C4.963635-1.778181 5.01818-2.62909 5.01818-3.490908ZM2.716363 0C2.290908 0 1.647272-.272727 1.450909-1.32C1.330909-1.974545 1.330909-2.978181 1.330909-3.621817C1.330909-4.319999 1.330909-5.039999 1.418181-5.629089C1.625454-6.927271 2.443636-7.025453 2.716363-7.025453C3.076363-7.025453 3.796363-6.829089 4.003635-5.749089C4.112726-5.13818 4.112726-4.30909 4.112726-3.621817C4.112726-2.803636 4.112726-2.061818 3.992726-1.363636C3.82909-.327273 3.207272 0 2.716363 0Z">
+                    </path>
+                    <path id="g2-49"
+                        d="M3.207272-6.981816C3.207272-7.243634 3.207272-7.265453 2.956363-7.265453C2.279999-6.567271 1.32-6.567271 .970909-6.567271V-6.229089C1.189091-6.229089 1.832727-6.229089 2.399999-6.512725V-.861818C2.399999-.469091 2.367272-.338182 1.385454-.338182H1.036363V0C1.418181-.032727 2.367272-.032727 2.803636-.032727S4.18909-.032727 4.570908 0V-.338182H4.221817C3.239999-.338182 3.207272-.458182 3.207272-.861818V-6.981816Z">
+                    </path>
+                    <path id="g2-50"
+                        d="M1.385454-.84L2.541817-1.963636C4.243635-3.46909 4.89818-4.058181 4.89818-5.149089C4.89818-6.392725 3.916363-7.265453 2.585454-7.265453C1.352727-7.265453 .545454-6.261816 .545454-5.290908C.545454-4.679999 1.090909-4.679999 1.123636-4.679999C1.309091-4.679999 1.690909-4.810908 1.690909-5.25818C1.690909-5.541817 1.494545-5.825453 1.112727-5.825453C1.025454-5.825453 1.003636-5.825453 .970909-5.814544C1.221818-6.523635 1.810909-6.927271 2.443636-6.927271C3.436363-6.927271 3.905453-6.043635 3.905453-5.149089C3.905453-4.276362 3.359999-3.414545 2.759999-2.738181L.665454-.403636C.545454-.283636 .545454-.261818 .545454 0H4.592726L4.89818-1.898181H4.625453C4.570908-1.570909 4.494544-1.090909 4.385453-.927272C4.30909-.84 3.58909-.84 3.34909-.84H1.385454Z">
+                    </path>
+                    <path id="g2-61"
+                        d="M7.494543-3.567272C7.65818-3.567272 7.865452-3.567272 7.865452-3.785453S7.65818-4.003635 7.505452-4.003635H.970909C.818182-4.003635 .610909-4.003635 .610909-3.785453S.818182-3.567272 .981818-3.567272H7.494543ZM7.505452-1.450909C7.65818-1.450909 7.865452-1.450909 7.865452-1.66909S7.65818-1.887272 7.494543-1.887272H.981818C.818182-1.887272 .610909-1.887272 .610909-1.66909S.818182-1.450909 .970909-1.450909H7.505452Z">
+                    </path>
+                </defs>
+                <g id="page1" transform="matrix(1.13 0 0 1.13 -232.700099 -75.443272)">
+                    <use x="205.159941" y="73.779981" xlink:href="#g0-120"></use>
+                    <use x="213.818993" y="73.779981" xlink:href="#g2-43"></use>
+                    <use x="224.728067" y="73.779981" xlink:href="#g2-49"></use>
+                    <use x="230.182631" y="73.779981" xlink:href="#g2-50"></use>
+                    <rect x="205.159941" y="78.214615" height=".436352" width="30.477217"></rect>
+                    <use x="205.521059" y="88.643144" xlink:href="#g0-120"></use>
+                    <use x="211.755913" y="85.491632" xlink:href="#g1-50"></use>
+                    <use x="218.912426" y="88.643144" xlink:href="#g2-43"></use>
+                    <use x="229.8215" y="88.643144" xlink:href="#g2-49"></use>
+                    <use x="239.862919" y="81.160051" xlink:href="#g2-61"></use>
+                    <use x="251.378043" y="81.160051" xlink:href="#g2-49"></use>
+                    <use x="256.832608" y="81.160051" xlink:href="#g2-48"></use>
+                </g>
+            </svg>
+            <hr><span class="flc"> Answer: <div class="spoiler" style="display: inline-block;">0.9 or <svg
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        width="12.327286pt" height="25.276535pt" viewBox="-.964757 -.281855 12.327286 25.276535">
+                        <defs>
+                            <path id="g0-48"
+                                d="M5.01818-3.490908C5.01818-4.363635 4.963635-5.236362 4.581817-6.043635C4.079999-7.090907 3.185454-7.265453 2.727272-7.265453C2.072727-7.265453 1.276363-6.981816 .829091-5.967271C.48-5.214544 .425454-4.363635 .425454-3.490908C.425454-2.672727 .469091-1.690909 .916363-.861818C1.385454 .021818 2.181818 .24 2.716363 .24C3.305454 .24 4.134544 .010909 4.614544-1.025454C4.963635-1.778181 5.01818-2.62909 5.01818-3.490908ZM2.716363 0C2.290908 0 1.647272-.272727 1.450909-1.32C1.330909-1.974545 1.330909-2.978181 1.330909-3.621817C1.330909-4.319999 1.330909-5.039999 1.418181-5.629089C1.625454-6.927271 2.443636-7.025453 2.716363-7.025453C3.076363-7.025453 3.796363-6.829089 4.003635-5.749089C4.112726-5.13818 4.112726-4.30909 4.112726-3.621817C4.112726-2.803636 4.112726-2.061818 3.992726-1.363636C3.82909-.327273 3.207272 0 2.716363 0Z">
+                            </path>
+                            <path id="g0-49"
+                                d="M3.207272-6.981816C3.207272-7.243634 3.207272-7.265453 2.956363-7.265453C2.279999-6.567271 1.32-6.567271 .970909-6.567271V-6.229089C1.189091-6.229089 1.832727-6.229089 2.399999-6.512725V-.861818C2.399999-.469091 2.367272-.338182 1.385454-.338182H1.036363V0C1.418181-.032727 2.367272-.032727 2.803636-.032727S4.18909-.032727 4.570908 0V-.338182H4.221817C3.239999-.338182 3.207272-.458182 3.207272-.861818V-6.981816Z">
+                            </path>
+                            <path id="g0-57"
+                                d="M4.003635-3.46909V-3.119999C4.003635-.567273 2.86909-.065455 2.236363-.065455C2.050909-.065455 1.461818-.087273 1.167272-.458182C1.647272-.458182 1.734545-.774545 1.734545-.96C1.734545-1.298181 1.472727-1.461818 1.232727-1.461818C1.058182-1.461818 .730909-1.363636 .730909-.938182C.730909-.207273 1.32 .24 2.247272 .24C3.654544 .24 4.985453-1.243636 4.985453-3.58909C4.985453-6.523635 3.730908-7.265453 2.759999-7.265453C2.159999-7.265453 1.625454-7.069089 1.156363-6.57818C.709091-6.087271 .458182-5.629089 .458182-4.810908C.458182-3.447272 1.418181-2.378181 2.639999-2.378181C3.305454-2.378181 3.752726-2.836363 4.003635-3.46909ZM2.650908-2.62909C2.476363-2.62909 1.974545-2.62909 1.636363-3.316363C1.44-3.719999 1.44-4.265453 1.44-4.799999C1.44-5.389089 1.44-5.901817 1.66909-6.305453C1.963636-6.850907 2.378181-6.992725 2.759999-6.992725C3.261817-6.992725 3.621817-6.621816 3.807272-6.130907C3.938181-5.781817 3.981817-5.094544 3.981817-4.592726C3.981817-3.687272 3.610908-2.62909 2.650908-2.62909Z">
+                            </path>
+                        </defs>
+                        <g id="page1" transform="matrix(1.13 0 0 1.13 -258.233243 -75.443272)">
+                            <use x="230.398503" y="73.779981" xlink:href="#g0-57"></use>
+                            <rect x="227.671227" y="78.214615" height=".436352" width="10.909103"></rect>
+                            <use x="227.671227" y="88.643144" xlink:href="#g0-49"></use>
+                            <use x="233.125792" y="88.643144" xlink:href="#g0-48"></use>
+                        </g>
+                    </svg></div>
+            </span>
+        </div>
+        <p></p>
+        <h1 class="flc"> Of course, I don't really know what to put here, so here's a load of filler text!!! I call
+            this color scheme "corporate sky blue" by the way</span></h1>
+        <div style="font-size: 1.2rem;">
+            <p class="flc">this looks boring</p>
+        </div>
+    </div>
+    <div id="C">
+        MORE LINKS
+        <table>
+            <tr>
+                <td>
+                    <a href="./Gavins_Website_ORG.html">
+                        macaroni
+                    </a>
+                </td>
+                <td>
+                    <a href="./Gavins_Website_Corp.html">
+                        corporate sky blue
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="./Gavins_Website_Green.html">
+                        "GOBWAE™™"
+                    </a>
+                </td>
+                <td>
+                    <a href="mailto:gjw3503@gmail.com">
+                        mail me (definitely not recommended)
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
